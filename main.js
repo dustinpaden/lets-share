@@ -477,7 +477,10 @@ $(function () {
                     "&id=" +
                     window.pid +
                     "&v=" +
-                    window.pv;
+                    window.pv +
+                    "&userid=" +
+                    (new URLSearchParams(window.location.search).get('userid'))
+                    ;
             });
             location.href =
                 window.redirect +
