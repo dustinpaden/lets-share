@@ -35,7 +35,7 @@ $(function () {
         // In condition 1, the participant will receive 1 like at the following timepoint (in ms). Default: [12000, 9999999]
         settings.condition_1_likes = [25000, 90000];
 
-        // In condition 2, user will receive 6 likes at the following timepoints (in ms). Default: [10000, 15000,35000,80000,1320000,150000]
+        // NOT USING In condition 2, user will receive 6 likes at the following timepoints (in ms). Default: [10000, 15000,35000,80000,1320000,150000]
         settings.condition_2_likes = [
             10000, 40000, 67000, 89000, 130000, 155000,
         ];
@@ -511,17 +511,7 @@ $(function () {
 
     // Get URL parameters to set condition number and participant number
     function get_params() {
-        // condition number must be 1, 2, or 3
-        if (
-            window.QueryString.c !== undefined &&
-            !isNaN(parseInt(window.QueryString.c)) &&
-            parseInt(window.QueryString.c) > 0 &&
-            parseInt(window.QueryString.c) < 4
-        ) {
-            window.condition = parseInt(window.QueryString.c);
-        } else {
-            window.condition = 1; // condition defaults to 1
-        }
+        window.condition= Math.floor(Math.random() * 2) * 2 + 1
         // participant number must be numeric
         if (
             window.QueryString.p !== undefined &&
