@@ -507,7 +507,10 @@ $(function () {
                 "&id=" +
                 window.pid +
                 "&v=" +
-                window.pv;
+                window.pv +
+                "&userid=" +
+                (new URLSearchParams(window.location.search).get('userid'))
+                ;
         }, window.settings.tasklength); // timing for task
         update_ranking();
     }
