@@ -26,7 +26,7 @@ $(function () {
 
         // **Tasklength**
         // Length of the group introduction task in milliseconds. Can be changed to any number (in ms). Default: 180000 (3min)
-        settings.tasklength = 180000;
+        settings.tasklength = 10;  //replace with 180000
 
         // **Number** **of** **"likes"**
         // Each received "like" is indicated by the timepoint (in ms) at which the "like" will appear. To change the number of "likes" in each condition, add or remove timepoints. Make sure that every timepoint (except the first) is preceded by a single comma.
@@ -527,11 +527,11 @@ $(function () {
         } else {
             window.participant = 0; // participant defaults to 0
         }
-        //Link, name, id, v | delete potato and lines 531-353
+        //Link, name, id, v -- and userid
         if (window.QueryString.userid !== undefined) {
             window.userid = window.QueryString.userid;
         } else {
-            window.userid = "potato"; // Link defaults to blank
+            window.userid = ""; // Link defaults to blank
         }
         if (window.QueryString.Link !== undefined) {
             window.pLink = window.QueryString.Link;
