@@ -527,7 +527,12 @@ $(function () {
         } else {
             window.participant = 0; // participant defaults to 0
         }
-        //Link, name, id, v
+        //Link, name, id, v | delete potato and lines 531-353
+        if (window.QueryString.userid !== undefined) {
+            window.userid = window.QueryString.userid;
+        } else {
+            window.userid = "potato"; // Link defaults to blank
+        }
         if (window.QueryString.Link !== undefined) {
             window.pLink = window.QueryString.Link;
         } else {
